@@ -1,0 +1,54 @@
+.createList {
+	margin-bottom: 3rem;
+	form {
+		text-align: center;
+	}
+	.input {
+		width: 90%;
+		padding: 0.5rem 0.7rem;
+		font-weight: 900;
+	}
+	.btn {
+		margin-top: 1rem;
+	}
+}
+
+/* XXX                                         MEDIA QUERIES                                               */
+//YYY Tablet
+@media all and (max-width: 1278px) {
+	.createList {
+		margin-bottom: 1.5rem;
+		.btn {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+//YYY Mobile
+@media all and (max-width: 600px) and (max-height: 900px) {
+	.createList {
+		.input {
+			width: 95%;
+		}
+	}
+}
+
+@media all and (max-height: 700px) {
+	.createList {
+		.btn {
+			font-size: 1rem;
+		}
+		.input {
+			padding: 0.3rem 0.5rem;
+		}
+	}
+}
+
+@media all and (max-height: 500px) {
+	.createList {
+		font-size: 1rem;
+		.btn {
+			margin-top: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,234 @@
+:root {
+	--white: #fff;
+	--black: #1a1a1c;
+
+	--aqua: #05ecc2;
+
+	--red: #c3083f;
+	--red-dark: #950741;
+	--red-wine: #4b0210;
+	--red-light: #e90e4e;
+
+	--yellow: #f6ae2d;
+
+	--green: #14a825;
+
+	--grey: #7a7a7a;
+	--grey-dark: #4e4e50;
+	--grey-light: #bbbbbb;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	max-height: 100vh;
+	box-sizing: border-box;
+	background: rgb(233, 14, 78);
+	background: linear-gradient(
+		155deg,
+		rgba(233, 14, 78, 1) 0%,
+		rgba(233, 14, 78, 1) 50%,
+		rgba(195, 8, 63, 1) 50%,
+		rgba(195, 8, 63, 1) 100%
+	);
+}
+
+//clicking on icon will return svg instead of path -> onClick working properly
+path {
+	pointer-events: none;
+}
+
+h1 {
+	font-size: 3.5rem;
+	color: var(--grey-light);
+	text-transform: capitalize;
+}
+h6 {
+	color: var(--grey);
+	font-size: 1.2rem;
+	text-transform: capitalize;
+	&:hover {
+		color: var(--grey-light);
+	}
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+svg {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.main-container {
+	display: flex;
+	position: relative;
+}
+
+.card {
+	margin: 2rem 4rem;
+	max-width: calc(85% - 8rem);
+	flex-grow: 1;
+	background-color: var(--black);
+	border-radius: 10px;
+	color: var(--grey);
+	filter: drop-shadow(7px 7px 2px rgba(0, 0, 0, 0.6));
+	h1 {
+		text-align: center;
+		word-break: break-word;
+		max-width: 75%;
+		margin: 0.5rem auto 1rem auto;
+	}
+}
+
+.input {
+	color: var(--grey-light);
+	background-color: var(--black);
+	border: 2px solid var(--grey);
+	border-radius: 20px;
+	outline: none;
+	transition: border 0.3s ease-in;
+	&:focus {
+		border: 2px solid var(--white);
+		color: var(--white);
+	}
+}
+.input:focus::placeholder {
+	color: var(--white);
+}
+
+.input--success {
+	&:focus {
+		border: 2px solid var(--green);
+	}
+	border: 2px solid var(--green);
+	transition: border 0.3s ease-out;
+}
+
+.input--fail {
+	&:focus {
+		border: 2px solid var(--red);
+	}
+	border: 2px solid var(--red);
+	transition: border 0.3s ease-out;
+}
+
+.btn {
+	color: var(--white);
+	background-color: var(--red);
+	font-weight: 900;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 10px;
+	padding: 0.5rem 1rem;
+	&:hover {
+		background-color: var(--red-light);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		cursor: pointer;
+	}
+	&:active {
+		outline: none;
+	}
+}
+
+.logout {
+	cursor: pointer;
+}
+
+/* XXX                                         IMPORTS                                               */
+
+@import "./sidebar";
+@import "./createTodo";
+@import "./todosList";
+@import "./sidebarHeader";
+@import "./createList";
+@import "./accountCards";
+@import "./userModal";
+@import "./todosModal";
+
+/* XXX                                         MEDIA QUERIES                                               */
+//YYY Desktop
+@media all and (min-width: 1279px) and (max-width: 1365px) {
+	.card {
+		margin: 2rem 3rem;
+	}
+}
+
+@media all and (min-width: 1279px) {
+	.input {
+		max-width: 85%;
+	}
+	.card {
+		height: min-content;
+		h1 {
+			max-width: 90%;
+		}
+	}
+}
+
+//YYY Tablet
+@media all and (max-width: 1278px) {
+	html,
+	body {
+		height: 100%;
+		min-height: 100%;
+		max-height: 100%;
+	}
+	.main-container {
+		height: 100%;
+	}
+	.card {
+		margin: 0;
+		height: 100%;
+		min-width: 100%;
+		flex-grow: 0;
+		border-radius: 0;
+	}
+	.input {
+		font-size: 1.5rem;
+	}
+	h1 {
+		color: var(--white);
+	}
+	h6 {
+		font-size: 1.8rem;
+	}
+	.btn {
+		&:hover {
+			background-color: var(--red);
+		}
+		&:active {
+			background-color: var(--red-light);
+		}
+	}
+}
+
+@media all and (max-width: 1278px) and (max-height: 658px) and (orientation: landscape) {
+	.card {
+		height: max-content;
+	}
+}
+
+//YYY Mobile
+@media all and (max-width: 600px) and (max-height: 900px) {
+	body {
+		font-size: 1rem;
+	}
+	.input {
+		font-size: 1rem;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.input {
+		font-size: 1rem;
+	}
+}

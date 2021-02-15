@@ -1,0 +1,49 @@
+.create-todo {
+	padding: 1rem 0;
+	top: 0;
+	position: -webkit-sticky;
+	position: sticky;
+	background-color: var(--black);
+	display: flex;
+	flex-direction: column;
+	h3 {
+		margin: 0 auto 1rem auto;
+		color: var(--white);
+		font-weight: 900;
+		font-size: 2rem;
+		text-transform: capitalize;
+	}
+}
+
+.create-todo-icons {
+	display: flex;
+
+	.btn {
+		margin: 1rem auto;
+	}
+
+	.clear-btn {
+		margin: 0 auto;
+		padding: 0.5rem 1rem;
+		text-align: center;
+		background-color: var(--red-dark);
+		outline: none;
+		border: none;
+		border-radius: 0.5rem;
+		color: var(--white-dark);
+		font-weight: 900;
+		text-transform: capitalize;
+		&:hover {
+			color: var(--white);
+			background-color: var(--red);
+			cursor: pointer;
+		}
+	}
+}
+
+/* XXX                                         MEDIA QUERIES                                               */
+@media all and (max-width: 1278px) {
+	.create-todo {
+		padding: 0;
+	}
+}

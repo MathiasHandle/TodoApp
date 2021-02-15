@@ -1,0 +1,124 @@
+.account-container {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.account-card {
+	margin: 10% 0;
+	padding: 2rem 4rem;
+	display: flex;
+	flex-grow: 0;
+	flex-direction: column;
+	text-align: center;
+	h1 {
+		text-align: center;
+	}
+	form {
+		div {
+			padding: 1rem 0;
+			display: flex;
+			flex-direction: column;
+			label {
+				font-weight: 900;
+				padding-bottom: 0.3rem;
+				text-align: center;
+				text-transform: capitalize;
+				color: var(--grey-light);
+			}
+			input {
+				padding: 0.2rem 0.5rem;
+			}
+		}
+	}
+}
+
+.account-card-footer {
+	margin: 0 auto;
+	padding-top: 3rem;
+	display: block;
+	text-align: center;
+	p {
+		margin: 0 auto;
+		font-style: italic;
+	}
+	h6 {
+		margin: 0.5rem 0 0 0;
+	}
+}
+
+/* XXX                                         MEDIA QUERIES                                               */
+//YYY Desktop
+@media all and (min-width: 1279px) {
+	.account-card {
+		h1 {
+			max-width: none !important;
+		}
+	}
+}
+
+//YYY Tablet
+@media all and (max-width: 1278px) {
+	.account-card {
+		font-size: 1.5rem;
+		height: 100vh;
+		padding: 0;
+		h1 {
+			margin-top: 25%;
+			font-size: 4rem;
+		}
+		form {
+			width: 80%;
+			margin: 0 auto;
+			div {
+				label {
+					font-size: 2rem;
+					color: var(--white);
+				}
+			}
+		}
+		h6 {
+			font-size: 2rem;
+		}
+		button {
+			font-size: 1.5rem;
+		}
+	}
+
+	.account-card-footer {
+		h6 {
+			color: var(--white);
+			&:hover {
+				color: var(--white);
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1278px) and (max-height: 1280px) {
+	.account-card {
+		h1 {
+			margin-top: 5%;
+		}
+		form {
+			margin: 2rem auto;
+			div {
+				padding: 2rem 0;
+			}
+		}
+	}
+	.account-card-footer {
+		margin-top: 3rem;
+	}
+}
+
+@media all and (max-height: 700px) {
+	.account-card-footer {
+		margin-top: 0;
+	}
+	.account-card {
+		button {
+			font-size: 1rem;
+		}
+	}
+}
