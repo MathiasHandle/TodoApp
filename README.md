@@ -1,6 +1,8 @@
 # TodoApp
 Todo App developed in **React** and **Node.js**, that uses **MySql** relational database and **Sass**.
 
+Basic functions like creating, deleting, renaming, adding and removing todos to important list are accessible without user. If you want to create todo lists you need to register and login.
+
 http://todo-react-node.herokuapp.com/
 
 ![](view.png)
